@@ -6,8 +6,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function MyNavbar() {
+
+  const handleHome = () => {
+    alert('Home');
+  }
   return (
-    <Navbar bg="light" expand="lg">
+    <>
+      <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -16,10 +21,8 @@ function MyNavbar() {
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll
-          >
-
-            
-            <Nav.Link href="#action1">Home</Nav.Link>
+          >   
+            <Nav.Link href="#action1" onClick={(e)=>handleHome(e)}>Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -47,7 +50,9 @@ function MyNavbar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
+
+    </>
+    );
 }
 
 export default MyNavbar;
